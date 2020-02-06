@@ -33,7 +33,10 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/run.py",
-            "args": ["--method", "ccsa"],
+            "args": [
+                "--method", "ccsa",
+                "--architecture", "two_stream_pair_embeds",
+            ],
             "console": "integratedTerminal"
         },
         {
@@ -41,7 +44,12 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/run.py",
-            "args": ["--method", "dsne"],
+            "args": [
+                "--method", "dsne",
+                "--model_base", "none" ,
+                "--features", "vgg16" ,
+                "--architecture", "two_stream_pair_embeds" ,
+            ],
             "console": "integratedTerminal"
         },
         {
@@ -54,8 +62,8 @@
                 "--architecture", "two_stream_pair_embeds_attention_mid" ,
                 "--source", "A" ,
                 "--target", "D" ,
-                "--model_base", "none" ,
-                "--features", "vgg16" ,
+                "--model_base", "vgg16" ,
+                "--features", "images" ,
                 "--connection_type", "source_target" ,
                 "--connection_filter_type", "all" ,
                 "--penalty_connection_filter_type", "all" ,
